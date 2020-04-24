@@ -27,18 +27,6 @@ public class Test {
 
          */
         //lab2tests
-        /*Aerobics a1 = new Aerobics();
-        a1.setName("Push-ups");
-        a1.setDuration(6);
-        Aerobics a2 = new Aerobics("Random");
-        System.out.println("A1");
-        System.out.println("Name: " + a1.getName() + ", Duration: " + a1.getDuration());
-        Workout w1 = new Workout(11);
-        w1.add(a1);
-        w1.add(5, a2);
-        System.out.println(w1.get(5)); */
-
-
 
         Approach app1 = new Approach(5,10,15);
         Approach app2 = new Approach(3,12,17);
