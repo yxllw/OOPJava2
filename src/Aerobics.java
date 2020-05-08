@@ -1,21 +1,13 @@
-public class Aerobics implements Exercise {
-    private String name;
-    private int duration;
+public class Aerobics extends AbstractExercise implements Exercise{
+    public int duration;
     private static final int DEFAULT_DURATION = 3;
 
-    public Aerobics() { }
-    public Aerobics(String name) {
-       this(name,DEFAULT_DURATION);
-    }
-    public Aerobics(String name, int duration) {
-        this.name = name;
+    public Aerobics(int duration){
         this.duration = duration;
     }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name){
-        this.name = name;
+    public Aerobics(String name, int duration, Equipments equipments){
+        super(name, equipments);
+        this.duration = duration;
     }
     public int getDuration(){
         return duration;

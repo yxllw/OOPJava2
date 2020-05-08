@@ -28,7 +28,7 @@ public class Test {
          */
         //lab2tests
 
-        Approach app1 = new Approach(5,10,15);
+        /*Approach app1 = new Approach(5,10,15);
         Approach app2 = new Approach(3,12,17);
         Approach app3 = new Approach(7,13,22);
         app3.setDuration(10);
@@ -46,6 +46,33 @@ public class Test {
         wt1.remove(0);
         System.out.println(wt1.size());
         System.out.println(app2.getAttemptsQuantity());
+        */
 
+        //lab3tests
+        Aerobics ex1 = new Aerobics("Barbell-up", 7, Equipments.BURBELL);
+        Aerobics ex3 = new Aerobics("Random1", 11, Equipments.NONE);
+        Aerobics ex4 = new Aerobics("Random2",5, Equipments.NONE);
+        Aerobics ex5 = new Aerobics("Random3", 3, Equipments.NONE);
+        ex3.setDuration(15);
+        ex4.setEquipments(Equipments.EZ_BAR);
+        Workout workout = new Workout(10);
+        workout.add(ex1);
+        workout.add(ex3);
+        workout.add(ex4);
+        workout.add(ex5);
+        Aerobics[] aerobics;
+        aerobics = workout.getExercises();
+        //aerobics = workout.getExercisesWithoutEquipments();
+        for (Aerobics ae1: aerobics){
+            System.out.println(ae1.getName());
+        }
+        for (int i = 0; i < aerobics.length; i++) {
+           System.out.println(aerobics[i].getEquipments());
+        }
+
+        //System.out.println(ex1.getEquipments());
+        //System.out.println(workout.size());
+        //System.out.println(ex1.getName());
+        System.out.println(ex3.getDuration());
     }
 }

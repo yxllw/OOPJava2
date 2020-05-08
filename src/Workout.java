@@ -1,4 +1,4 @@
-public class Workout {
+public class Workout{
     private Aerobics[] exercises;
     private int size;
     private int total;
@@ -119,5 +119,22 @@ public class Workout {
             }
         }
         return result;
+    }
+    public Aerobics[] getExercisesWithoutEquipments(){
+        int count = 0;
+        for(int i = 0; i < size; i++){
+            if(exercises[i].getEquipments() == Equipments.NONE){
+                count++;
+            }
+        }
+        Aerobics[] exercisesWithoutEquipments = new Aerobics[count];
+        int j = 0;
+        for(int i = 0; i < size; i++){
+            if(exercises[i].getEquipments() == Equipments.NONE){
+                exercisesWithoutEquipments[j] = exercises[i];
+                j++;
+            }
+        }
+        return exercisesWithoutEquipments;
     }
 }

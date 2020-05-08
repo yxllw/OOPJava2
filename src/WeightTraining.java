@@ -1,20 +1,29 @@
-public class WeightTraining implements ComplexExercise{
-    private String name;
+public class WeightTraining extends AbstractExercise implements ComplexExercise{
     private int size;
     private Node head, tail;
-    public WeightTraining(String name){
-        this.name = name;
+    public WeightTraining(){
         this.head = null;
         this.tail = null;
     }
     public WeightTraining(String name, Approach[] approaches){
-        this.name = name;
         size = approaches.length;
         head = new Node();
         Node current = head;
         for (Approach approach: approaches) {
             current.next = new Node(approach);
              current = current.next;
+        }
+        tail = current;
+        tail.next = head;
+    }
+    public WeightTraining(String name, Equipments equipments, Approach[] approaches){
+        super(name, equipments);
+        size = approaches.length;
+        head = new Node();
+        Node current = head;
+        for (Approach approach: approaches) {
+            current.next = new Node(approach);
+            current = current.next;
         }
         tail = current;
         tail.next = head;
@@ -105,12 +114,6 @@ public class WeightTraining implements ComplexExercise{
             approachQuantities[i] = approaches[i].getAttemptsQuantity();
         }
         return approachQuantities;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name = name;
     }
     public int getDuration(){
         Node current;
