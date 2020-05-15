@@ -31,4 +31,17 @@ public class Approach {
     public void setAttemptsQuantity(int attemptsQuantity){
         this.attemptsQuantity = attemptsQuantity;
     }
+    @Override
+    public String toString(){
+        return String.format("w: %f kg #: %d t: %d min", weight, attemptsQuantity, duration);
+    }
+    @Override
+    public int hashCode() {
+        return Double.valueOf(attemptsQuantity).hashCode()*Double.valueOf(weight).hashCode();
+    }
+    @Override
+    public boolean equals(Object object){
+        Approach app = (Approach) object;
+        return weight == app.weight && duration == app.duration && attemptsQuantity == app.attemptsQuantity;
+    }
 }

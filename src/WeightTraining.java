@@ -126,6 +126,37 @@ public class WeightTraining extends AbstractExercise implements ComplexExercise{
         return result;
     }
     public void setDuration(int duration){}
+    public boolean remove(Approach approach){
+        Node current = head.next;
+        for(int i = 0; i < size; i++){
+            if(current.value.equals(approach)){
+                removeNode(i);
+                return true;
+            }
+        }
+        return false;
+    }
+    public int indexOf(Approach approach){
+        Node current = head.next;
+        for(int i = 0; i < size; i++){
+            if(current.value.equals(approach)){
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
+    }
+    public int lastIndexOf(Approach approach){
+        int index = -1;
+        Node current = head.next;
+        for(int i = 0; i < size; i++){
+            if(current.value.equals(approach)){
+                index = i;
+            }
+            current = current.next;
+        }
+        return index;
+    }
     private boolean addNode(Node node){
         tail.next = node;
         tail = tail.next;
@@ -194,5 +225,36 @@ public class WeightTraining extends AbstractExercise implements ComplexExercise{
         Node(Approach value){
             this.value = value;
         }
+    }
+    @Override
+    public String toString(){
+        Node current;
+        StringBuilder str = new StringBuilder(super.toString() + ". Approaches\n");
+        if (size != 0) {
+            current = head.next;
+            for (int i = 0; i < size; ++i) {
+                str.append(current.value.toString()).append("\n");
+                current = current.next;
+            }
+        }
+        return str.toString();
+    }
+    @Override
+    public int hashCode(){
+        Node current;
+        int hash = super.hashCode() * 71;
+        if(size != 0){
+            current = head.next;
+            for(int i = 0; i < size; i++){
+                hash *= current.value.hashCode();
+                current = current.next;
+            }
+        }
+        return hash;
+    }
+    @Override
+    public boolean equals(Object object){
+        WeightTraining wt = (WeightTraining) object;
+        return size == wt.size && head == wt.head && tail == wt.tail;
     }
 }

@@ -15,4 +15,17 @@ public class Aerobics extends AbstractExercise implements Exercise{
     public void setDuration(int duration){
         this.duration = duration;
     }
+    @Override
+    public String toString(){
+        String str = String.format(", %d min ", duration);
+        return super.toString() + str;
+    }
+    @Override
+    public int hashCode(){
+        return super.hashCode() * 53;
+    }
+    @Override
+    public boolean equals(Object object){
+        return super.equals(object);
+    }
 }

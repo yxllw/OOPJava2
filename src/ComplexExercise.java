@@ -10,4 +10,7 @@ public interface ComplexExercise extends Exercise{
     public int size();
     public double[] approachWeights();
     public int[] approachQuantities();
+    public boolean remove(Approach approach);
+    public int indexOf(Approach approach);
+    public int lastIndexOf(Approach approach);
 }

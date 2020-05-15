@@ -137,4 +137,50 @@ public class Workout{
         }
         return exercisesWithoutEquipments;
     }
+    public boolean remove(Exercise exercise){
+        for(int i = 0; i < size; i++){
+            if(exercises[i] != null && exercises[i].equals(exercise)){
+                //Aerobics exercise = exercises[i];
+                total--;
+                for(int j = i + 1; j < size; j++){
+                    exercises[j-1] = exercises[j];
+                }
+                exercises[size-1] = null;
+            }
+            return true;
+        }
+        return false;
+    }
+    public int IndexOf(Exercise exercise){
+        for (int i = 0; i < size; ++i) {
+            if (exercises[i] != null) {
+                if (exercises[i].equals(exercise)) {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+    public int lastIndexOf(Exercise exercise){
+        int index = -1;
+        for (int i = 0; i < size; ++i) {
+            if (exercises[i] != null) {
+                if (exercises[i].equals(exercise)) {
+                    index = i;
+                }
+            }
+        }
+        return index;
+    }
+    @Override
+    public String toString(){
+        StringBuilder str = new StringBuilder("Workout:\n");
+        for (Exercise exercise: exercises){
+            if(exercise != null){
+                str.append(exercise.toString()).append("\n");
+            }
+        }
+        return str.toString();
+    }
 }

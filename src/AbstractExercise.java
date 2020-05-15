@@ -21,4 +21,17 @@ public abstract class AbstractExercise implements Exercise{
     public void setEquipments(Equipments equipments){
         this.equipments = equipments;
     }
+    @Override
+    public String toString(){
+        return String.format("%s, Equipment: %s", name, equipments);
+    }
+    @Override
+    public int hashCode(){
+        return name.hashCode() * equipments.hashCode();
+    }
+    @Override
+    public boolean equals(Object object){
+        AbstractExercise ex = (AbstractExercise) object;
+        return name == ex.name && equipments == ex.equipments;
+    }
 }

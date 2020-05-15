@@ -49,7 +49,7 @@ public class Test {
         */
 
         //lab3tests
-        Aerobics ex1 = new Aerobics("Barbell-up", 7, Equipments.BURBELL);
+        /*Aerobics ex1 = new Aerobics("Barbell-up", 7, Equipments.BURBELL);
         Aerobics ex3 = new Aerobics("Random1", 11, Equipments.NONE);
         Aerobics ex4 = new Aerobics("Random2",5, Equipments.NONE);
         Aerobics ex5 = new Aerobics("Random3", 3, Equipments.NONE);
@@ -73,6 +73,35 @@ public class Test {
         //System.out.println(ex1.getEquipments());
         //System.out.println(workout.size());
         //System.out.println(ex1.getName());
-        System.out.println(ex3.getDuration());
+        System.out.println(ex3.getDuration());*/
+
+
+        //lab4tests
+        Aerobics a1 = new Aerobics("Barbell ups", 15, Equipments.BURBELL);
+        Aerobics a2 = new Aerobics("Push up", 20, Equipments.NONE);
+        Approach app1 = new Approach(3,12,17);
+        Approach app2 = new Approach(5, 17, 20);
+        Approach app3 = new Approach(10, 20, 40);
+        Workout w1 = new Workout(11);
+        w1.add(a1);
+        w1.add(a2);
+        w1.add(a2);
+        w1.remove(a1);
+        System.out.println(w1.IndexOf(a2));
+        System.out.println(w1.lastIndexOf(a2));
+        System.out.println(w1.toString());
+        System.out.println(w1.hashCode());
+        System.out.println(a1.toString());
+        System.out.println(a1.hashCode());
+        //System.out.println(a2.toString());
+        //System.out.println(a2.hashCode());
+        //WeightTraining wt1 = new WeightTraining();
+        //System.out.println(app1.toString());
+        //System.out.println(app1.hashCode());
+        //wt1.add(app1);
+        //wt1.add(app2);
+        //wt1.add(app3);
+        //System.out.println(wt1.hashCode());
+        //System.out.println(wt1.toString());
     }
 }
