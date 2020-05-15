@@ -140,7 +140,6 @@ public class Workout{
     public boolean remove(Exercise exercise){
         for(int i = 0; i < size; i++){
             if(exercises[i] != null && exercises[i].equals(exercise)){
-                //Aerobics exercise = exercises[i];
                 total--;
                 for(int j = i + 1; j < size; j++){
                     exercises[j-1] = exercises[j];
